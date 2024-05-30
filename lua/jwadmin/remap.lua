@@ -9,9 +9,17 @@ vim.keymap.set("i", "jk", "<Esc>")
 -- Visual Block
 vim.keymap.set("n", "<A-v>", "<C-q>")
 
--- Terminal exit
-vim.keymap.set("t", "jk", "<C-\\><C-n>")
+-- Terminal open
+vim.keymap.set("n", "<C-t>", function()
+    vim.cmd("bel new")
+    vim.cmd("term")
+    vim.cmd("resize 15")
+    vim.cmd("startinsert")
+end)
+
+-- Terminal navigation
 vim.keymap.set("t", "<Esc>", "<C-\\><C-n>")
+vim.keymap.set("t", "jk", "<C-\\><C-n>")
 
 -- Copy/Paste
 vim.keymap.set("n", "<C-v>", '"+p')
@@ -53,20 +61,12 @@ vim.keymap.set("n", "<C-j>", "<C-w><down>")
 vim.keymap.set("n", "<C-k>", "<C-w><up>")
 vim.keymap.set("n", "<C-h>", "<C-w><left>")
 vim.keymap.set("n", "<C-l>", "<C-w><right>")
-vim.keymap.set("t", "<C-j>", "<C-w><down>")
-vim.keymap.set("t", "<C-k>", "<C-w><up>")
-vim.keymap.set("t", "<C-h>", "<C-w><left>")
-vim.keymap.set("t", "<C-l>", "<C-w><right>")
 
 -- Split resize
-vim.keymap.set("n", "<down>", "<C-w>5-")
-vim.keymap.set("n", "<up>", "<C-w>5+")
-vim.keymap.set("n", "<right>", "<C-w>5<")
-vim.keymap.set("n", "<left>", "<C-w>5>")
-vim.keymap.set("t", "<down>", "<C-w>5-")
-vim.keymap.set("t", "<up>", "<C-w>5+")
-vim.keymap.set("t", "<right>", "<C-w>5<")
-vim.keymap.set("t", "<left>", "<C-w>5>")
+vim.keymap.set("n", "<A-j>", "<C-w>5-")
+vim.keymap.set("n", "<A-k>", "<C-w>5+")
+vim.keymap.set("n", "<A-l>", "<C-w>5<")
+vim.keymap.set("n", "<A-h>", "<C-w>5>")
 
 -- Make executable
 vim.keymap.set("n", "<leader>x:", ":!chmod +x %<CR>", { silent = true })

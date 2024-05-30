@@ -30,7 +30,7 @@ return {
     { 'ThePrimeagen/vim-be-good' },
     { 'mbbill/undotree' },
     { 'tpope/vim-fugitive' },
-
+    
     -- LSP and Autocompletion
     { 
         'VonHeikemen/lsp-zero.nvim',
@@ -47,5 +47,8 @@ return {
     },
 
     -- GitHub Copilot integration
-    { 'github/copilot.vim' },
+    { 'github/copilot.vim',
+        lazy = false,
+    },
+
 }
