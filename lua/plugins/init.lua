@@ -30,27 +30,6 @@ return {
     },
     { 'nvim-treesitter/playground' },
 
-    -- Additional useful plugins
-    { 'ThePrimeagen/harpoon' },
-    { 'ThePrimeagen/vim-be-good' },
-    { 'tpope/vim-fugitive' },
-    { 'mbbill/undotree',
-        lazy = false,
-    },
-
-    -- Refactoring
-    {
-        "ThePrimeagen/refactoring.nvim",
-        lazy = false,
-        dependencies = {
-            "nvim-lua/plenary.nvim",
-            "nvim-treesitter/nvim-treesitter",
-        },
-        config = function()
-            require("refactoring").setup()
-        end,
-    },
-    
     -- LSP and Autocompletion
     { 
         'VonHeikemen/lsp-zero.nvim',
@@ -59,6 +38,7 @@ return {
             -- Uncomment the two plugins below if you want to manage the language servers from Neovim
             { 'williamboman/mason.nvim' },
             { 'williamboman/mason-lspconfig.nvim' },
+
             { 'neovim/nvim-lspconfig' },
             { 'hrsh7th/nvim-cmp' },
             { 'hrsh7th/cmp-nvim-lsp' },
@@ -66,7 +46,7 @@ return {
         }
     },
 
-    -- Diagnostic plugins
+    -- Diagnostic
     { 'folke/lsp-colors.nvim',
         lazy = false,
     },
@@ -81,9 +61,30 @@ return {
         opts = {}, -- for default options, refer to the configuration section for custom setup.
     },
     
-    -- GitHub Copilot integration
+    -- Refactoring
+    {
+        "ThePrimeagen/refactoring.nvim",
+        lazy = false,
+        dependencies = {
+            "nvim-lua/plenary.nvim",
+            "nvim-treesitter/nvim-treesitter",
+        },
+        config = function()
+            require("refactoring").setup()
+        end,
+    },
+
+    -- GitHub Copilot
     { 'github/copilot.vim',
         lazy = false,
     },
+
+    -- Additional useful plugins
+    { 'ThePrimeagen/harpoon' },
+    { 'ThePrimeagen/vim-be-good' },
+    { 'tpope/vim-fugitive' },
+    { 'mbbill/undotree',
+        lazy = false,
+    },  
 
 }

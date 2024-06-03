@@ -39,6 +39,8 @@ vim.keymap.set("n", "J", "5j")
 vim.keymap.set("n", "K", "5k")
 vim.keymap.set("n", "<leader>h", "^")
 vim.keymap.set("n", "<leader>l", "$")
+vim.keymap.set("v", "<leader>h", "0")
+vim.keymap.set("v", "<leader>l", "$")
 
 -- Search/replace
 vim.keymap.set("n", "<leader>s", [[:%s/\<<C-r><C-w>\>/<C-r><C-w>/gI<Left><Left><Left>]])
