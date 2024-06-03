@@ -14,7 +14,6 @@ lsp_zero.on_attach(function(client, bufnr)
   local opt = { buffer = bufnr, remap = false }
 
   vim.keymap.set('n', 'gd', function() vim.lsp_zero.buf.definition(opt) end, opts)
-  vim.keymap.set('n', 'K', function() vim.lsp_zero.buf.hover() end, opts)
   vim.keymap.set('n', '<leader>vws', function() vim.lsp_zero.buf.workspace_symbol() end, opts)
   vim.keymap.set('n', '<leader>vd', function() vim.lsp_zero.buf.open_float() end, opts)
   vim.keymap.set('n', '[d', function() vim.lsp_zero.buf.goto_next() end, opts)
@@ -22,7 +21,6 @@ lsp_zero.on_attach(function(client, bufnr)
   vim.keymap.set('n', '<leader>vca', function() vim.lsp_zero.buf.code_action() end, opts)
   vim.keymap.set('n', '<leader>vrr', function() vim.lsp_zero.buf.references() end, opts)
   vim.keymap.set('n', '<leader>vrn', function() vim.lsp_zero.buf.rename() end, opts)
-  vim.keymap.set('n', '<C-h>', function() vim.lsp_zero.buf.siganture_help() end, opts)
 end)
 
 lsp_zero.setup()
