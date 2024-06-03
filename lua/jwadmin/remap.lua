@@ -6,6 +6,9 @@ vim.keymap.set("n", "<Q>", "<Nop>")
 -- Insert exit
 vim.keymap.set("i", "jk", "<Esc>")
 
+-- Visual exit 
+vim.keymap.set("v", "jkjk", "<Esc>")
+
 -- Visual Block
 vim.keymap.set("n", "<A-v>", "<C-q>")
 

@@ -1,11 +1,16 @@
 return {
     -- Color theme
-    { "rose-pine/neovim", name = "rose-pine" },
+    { "rose-pine/neovim", name = "rose-pine",
+        lazy = false,
+    },
 
     -- Statusbar theme
-    { 'vim-airline/vim-airline' },
+    { 'vim-airline/vim-airline',
+        lazy = false,
+    },
     { 
         'vim-airline/vim-airline-themes',
+        lazy = false,
         config = function()
             vim.g.airline_theme = 'deus'
         end
@@ -28,8 +33,23 @@ return {
     -- Additional useful plugins
     { 'ThePrimeagen/harpoon' },
     { 'ThePrimeagen/vim-be-good' },
-    { 'mbbill/undotree' },
     { 'tpope/vim-fugitive' },
+    { 'mbbill/undotree',
+        lazy = false,
+    },
+
+    -- Refactoring
+    {
+        "ThePrimeagen/refactoring.nvim",
+        lazy = false,
+        dependencies = {
+            "nvim-lua/plenary.nvim",
+            "nvim-treesitter/nvim-treesitter",
+        },
+        config = function()
+            require("refactoring").setup()
+        end,
+    },
     
     -- LSP and Autocompletion
     { 
@@ -46,6 +66,21 @@ return {
         }
     },
 
+    -- Diagnostic plugins
+    { 'folke/lsp-colors.nvim',
+        lazy = false,
+    },
+    {
+        "folke/trouble.nvim",
+        lazy = false,
+        config = function()
+            require("trouble").setup({
+                icons = false,
+            })
+        end,
+        opts = {}, -- for default options, refer to the configuration section for custom setup.
+    },
+    
     -- GitHub Copilot integration
     { 'github/copilot.vim',
         lazy = false,
