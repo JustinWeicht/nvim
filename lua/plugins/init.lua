@@ -15,7 +15,7 @@ return {
             vim.g.airline_theme = 'deus'
         end
     },
-
+    
     -- Telescope for fuzzy finding
     { 
         'nvim-telescope/telescope.nvim', 
