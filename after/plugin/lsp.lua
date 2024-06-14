@@ -1,13 +1,22 @@
 local lsp_zero = require('lsp-zero')
 
-lsp_zero.set_preferences({
-    suggest_lsp_config = true,
-    sign_icons = {
-        error = 'E',
-        warning = 'W',
-        hint = 'H',
-        information = 'I'
+lsp_zero.preset("recommended")
+
+lsp_zero.configure('lua-language-server', {
+    settings = {
+        Lua = {
+            diagnostics = {
+                globals = { 'vim' }
+            }
+        }
     }
+})
+
+lsp_zero.set_sign_icons({
+  error = 'E',
+  warn = 'W',
+  hint = 'H',
+  info = 'I'
 })
 
 lsp_zero.on_attach(function(client, bufnr)
@@ -26,7 +35,29 @@ end)
 lsp_zero.setup()
 
 vim.diagnostic.config({
-    virtual_text = true
+    virtual_text = true,
+    signs = true,
+    update_in_insert = false, -- ensure diagnostics update outside of insert mode
+})
+
+require("mason").setup()
+require("mason-lspconfig").setup ({
+    ensure_installed = {
+        "lua_ls",
+        "rust_analyzer",
+        "html",
+        "cssls",
+        "sqlls",
+        "pyright",
+        "graphql",
+        "tsserver",
+        "marksman",
+    },
+    handlers = {
+        function(server_name)
+            require('lspconfig')[server_name].setup({})
+        end,
+    },
 })
 
 local cmp = require('cmp')
