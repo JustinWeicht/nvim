@@ -13,10 +13,10 @@ lsp_zero.configure('lua-language-server', {
 })
 
 lsp_zero.set_sign_icons({
-  error = 'E',
-  warn = 'W',
-  hint = 'H',
-  info = 'I'
+  error = '■',
+  warn = '□',
+  hint = '▲',
+  info = '»'
 })
 
 lsp_zero.on_attach(function(client, bufnr)

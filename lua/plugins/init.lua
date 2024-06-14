@@ -8,30 +8,30 @@ return {
     { 'vim-airline/vim-airline',
         lazy = false,
     },
-    { 
+    {
         'vim-airline/vim-airline-themes',
         lazy = false,
         config = function()
             vim.g.airline_theme = 'deus'
         end
     },
-    
+
     -- Telescope for fuzzy finding
-    { 
-        'nvim-telescope/telescope.nvim', 
+    {
+        'nvim-telescope/telescope.nvim',
         tag = '0.1.6',
         dependencies = { 'nvim-lua/plenary.nvim' }
     },
 
     -- Treesitter for improved syntax highlighting
-    { 
-        'nvim-treesitter/nvim-treesitter', 
-        build = ':TSUpdate' 
+    {
+        'nvim-treesitter/nvim-treesitter',
+        build = ':TSUpdate'
     },
     { 'nvim-treesitter/playground' },
 
     -- LSP and Autocompletion
-    { 
+    {
         'VonHeikemen/lsp-zero.nvim',
         branch = 'v3.x',
         dependencies = {
@@ -60,7 +60,7 @@ return {
         end,
         opts = {}, -- for default options, refer to the configuration section for custom setup.
     },
-    
+
     -- Refactoring
     {
         "ThePrimeagen/refactoring.nvim",
@@ -85,6 +85,6 @@ return {
     { 'tpope/vim-fugitive' },
     { 'mbbill/undotree',
         lazy = false,
-    },  
+    },
 
 }
