@@ -46,6 +46,8 @@ return {
         }
     },
 
+    { 'HallerPatrick/py_lsp.nvim' },
+
     -- Diagnostic
     { 'folke/lsp-colors.nvim',
         lazy = false,
