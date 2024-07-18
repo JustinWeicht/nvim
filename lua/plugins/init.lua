@@ -81,6 +81,21 @@ return {
         lazy = false,
     },
 
+    -- Copilot Chat
+    {
+        "CopilotC-Nvim/CopilotChat.nvim",
+        branch = "canary",
+        dependencies = {
+            { "zbirenbaum/copilot.lua" }, -- or github/copilot.vim
+            { "nvim-lua/plenary.nvim" }, -- for curl, log wrapper
+        },
+        opts = {
+            debug = true, -- Enable debugging
+            -- See Configuration section for rest
+        },
+        -- See Commands section for default commands if you want to lazy load on them
+    },
+
     -- Additional useful plugins
     { 'ThePrimeagen/harpoon' },
     { 'ThePrimeagen/vim-be-good' },
@@ -88,5 +103,23 @@ return {
     { 'mbbill/undotree',
         lazy = false,
     },
-
+    {
+        "folke/which-key.nvim",
+        event = "VeryLazy",
+        opts = {
+            -- your configuration comes here
+            -- or leave it empty to use the default settings
+            -- refer to the configuration section below
+        },
+        keys = {
+            {
+                "<leader>?",
+                function()
+                    require("which-key").show({ global = false })
+                end,
+                desc = "Buffer Local Keymaps (which-key)",
+            },
+        },
+    },
 }
+
