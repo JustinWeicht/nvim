@@ -84,6 +84,7 @@ return {
     -- Copilot Chat
     {
         "CopilotC-Nvim/CopilotChat.nvim",
+        lazy = false,
         branch = "canary",
         dependencies = {
             { "zbirenbaum/copilot.lua" }, -- or github/copilot.vim
@@ -92,6 +93,14 @@ return {
         opts = {
             debug = true, -- Enable debugging
             -- See Configuration section for rest
+            -- default window options
+            window = {
+                layout = "float",
+                relative = "cursor",
+                width = 1,
+                height = 0.4,
+                row = 1,
+            },
         },
         -- See Commands section for default commands if you want to lazy load on them
     },
@@ -102,24 +111,6 @@ return {
     { 'tpope/vim-fugitive' },
     { 'mbbill/undotree',
         lazy = false,
-    },
-    {
-        "folke/which-key.nvim",
-        event = "VeryLazy",
-        opts = {
-            -- your configuration comes here
-            -- or leave it empty to use the default settings
-            -- refer to the configuration section below
-        },
-        keys = {
-            {
-                "<leader>?",
-                function()
-                    require("which-key").show({ global = false })
-                end,
-                desc = "Buffer Local Keymaps (which-key)",
-            },
-        },
     },
 }
 

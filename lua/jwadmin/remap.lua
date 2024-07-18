@@ -31,7 +31,7 @@ vim.keymap.set("t", "jk", "<C-\\><C-n>")
 -- Copy to system clipboard
 vim.keymap.set("v", "<C-c>", '"+y')
 
--- Paste from system cilpboard in normal mode (no auto-indentation)
+-- Paste from system clipboard in normal mode (no auto-indentation)
 vim.keymap.set("n", "<C-v>", function()
     vim.cmd("set paste")
     vim.api.nvim_feedkeys('"*p', 'n', false)
@@ -103,6 +103,5 @@ vim.keymap.set("n", "<A-k>", "<C-w>5+")
 vim.keymap.set("n", "<A-l>", "<C-w>5<")
 vim.keymap.set("n", "<A-h>", "<C-w>5>")
 
--- Make executable
-vim.keymap.set("n", "<leader>x:", ":!chmod +x %<CR>", { silent = true })
-
+-- Copilot Chat
+vim.keymap.set("n", "<leader>cc", vim.cmd.CopilotChat)
