@@ -104,4 +104,4 @@ vim.keymap.set("n", "<A-l>", "<C-w>5<")
 vim.keymap.set("n", "<A-h>", "<C-w>5>")
 
 -- Copilot Chat
-vim.keymap.set("n", "<leader>cc", vim.cmd.CopilotChat)
+vim.keymap.set("n", "<leader>ai", vim.cmd.CopilotChat)
