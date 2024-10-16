@@ -105,6 +105,13 @@ return {
         -- See Commands section for default commands if you want to lazy load on them
     },
 
+    -- -- Floaterm for terminal management
+    -- {
+    --     { 'voldikss/vim-floaterm',
+    --         lazy = false,
+    --     },
+    -- },
+
     -- Additional useful plugins
     { 'ThePrimeagen/harpoon' },
     { 'ThePrimeagen/vim-be-good' },

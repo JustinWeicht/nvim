@@ -23,6 +23,25 @@ vim.keymap.set("n", "<C-t>", function()
     vim.cmd("startinsert")
 end)
 
+-- -- Floaterm Terminal open
+-- -- Variable to keep track of terminal state
+-- local is_floaterm_open = false
+-- 
+-- -- Lua function to handle Floaterm toggling
+-- local function toggle_floaterm()
+--     if is_floaterm_open then
+--         -- If Floaterm is open, toggle it
+--         vim.cmd("FloatermToggle")
+--     else
+--         -- If Floaterm is not open, create a new one
+--         vim.cmd("FloatermNew")
+--         is_floaterm_open = true
+--     end
+-- end
+-- 
+-- -- Keybind for toggling Floaterm
+-- vim.keymap.set("n", "<C-t>", toggle_floaterm)
+
 -- Terminal navigation
 vim.keymap.set("t", "<Esc>", "<C-\\><C-n>")
 vim.keymap.set("t", "jk", "<C-\\><C-n>")
